@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Grid with Data.js</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/video.css">
+</head>
+<body>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="images/Logo/Computer-Guru-Training-Institute-IDPL-Shyampur-Rishikesh-Uttarakhand.png" alt="" width=400"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    <section class="video-banner">
+        <h1>English Video Gallery</h1>
+    </section>
+    <section class="side-nav container-fluid">
+        <div class="container text-center tags mt-5">
+            <div class=" g-4">
+                <div class="">
+                    <a href="Hindivideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">Hindi</h5>
+                                <p class="card-text">Explore Hindi poems and stories.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="Englishvideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">English</h5>
+                                <p class="card-text">Discover English literature.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="Mathvideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">Math's</h5>
+                                <p class="card-text">Sing along with our curated songs.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="Mathvideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">GK</h5>
+                                <p class="card-text">Sing along with our curated songs.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="Mathvideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">Story</h5>
+                                <p class="card-text">Sing along with our curated songs.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="">
+                    <a href="Mathvideo.html" style="text-decoration: none;">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title">Art & Craft</h5>
+                                <p class="card-text">Sing along with our curated songs.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+            
+            <div class="video-grid" id="videoGrid">
+          
+            </div>
+    
+            
+        </section>
+
+    <footer class="footer">
+        <div class="container text-center py-4">
+            <p>&copy; 2024 Computer Guru. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/Hindidata.js"></script>
+    <script>
+        const videoGrid = document.getElementById('videoGrid');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        // Generate Video Cards Dynamically
+        videoData.map((video) => {
+            const card = document.createElement('div');
+            card.classList.add('video-card');
+            card.innerHTML = `
+                <div class="video-thumbnail">
+                    <img src="${video.thumbnail}" alt="${video.title}">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="video-title">${video.title}</div>
+            `;
+            card.addEventListener('click', () => openVideo(video.source));
+            videoGrid.appendChild(card);
+        });
+
+        // Open Video Modal
+        function openVideo(videoSrc) {
+            videoPlayer.querySelector('source').src = videoSrc;
+            videoPlayer.load();
+            videoModal.classList.add('active');
+            videoPlayer.play();
+        }
+
+        // Close Video Modal
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>

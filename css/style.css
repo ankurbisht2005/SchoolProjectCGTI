@@ -1,0 +1,227 @@
+/* Navbar Start */
+.navbar {
+    background: rgb(255, 255, 255);
+    color: #2d85d7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #2d85d7;
+    font-size: 20px;
+    transition: 0.3s;
+    width: 120px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: #ff0000;
+    font-size: 25px;
+}
+
+/* Navbar End */
+
+.hero-section {
+    color: white;
+    background: url('../images/Banner/banner1.png') no-repeat center center / cover;
+    /* animation: slide 25s infinite; */
+    /* padding: 100px 0; */
+    height: 350px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.containerbox{
+    /* background:linear-gradient(rgba(0, 0, 0, 0.548),rgba(255, 255, 255, 0.4  85)); */
+    height: 100%;
+    padding: 100px;
+}
+@keyframes slide {
+    0%{
+    background: url('../images/Banner/banner1.png') no-repeat center center / cover;
+    }
+    25%{
+    background: url('../images/Banner/banner2.png') no-repeat center center / cover;
+    }
+    50%{
+    background: url('../images/Banner/banner3.png') no-repeat center center / cover;
+    }
+    75%{
+    background: url('../images/Banner/banner4.jpg') no-repeat center center / cover;
+    }
+    100%{
+    background: url('../images/Banner/banner2.png') no-repeat center center / cover;
+    }
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section .btn-primary {
+    background: #2d85d7;
+    border: none;
+    padding: 10px 20px;
+    transition:   background 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    background: #DEB82C;
+}
+
+
+
+
+.cards-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background: linear-gradient(rgba(255, 1, 1, 0.5), rgba(84, 121, 241, 0.5)) ;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    background-color: #ff0000;
+    color: white;
+    
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer {
+    background: #000000;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #ffcccb;
+}
+
+
+/* Overlay Content */
+.modern-slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 50%;
+}
+
+.modern-slide-content h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.modern-slide-content p {
+    margin: 5px 0 0;
+}
+
+/* Navigation Buttons */
+.modern-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.modern-slider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+/* Dots */
+.modern-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.modern-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modern-dot.active {
+    background: rgba(255, 255, 255, 1);
+}
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #f8f9fa;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding: 20px 0;
+        }
+
+        .sidebar.active {
+            width: 300px;
+        }
+
+        .sidebar .close-sidebar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar .related-cards {
+            padding: 20px;
+        }
+
+        .card {
+            cursor: pointer;
+        }
+   
